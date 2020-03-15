@@ -1,3 +1,4 @@
+
 import org.eclipse.jetty.http.HttpStatus;
 import spark.Service;
 
@@ -20,8 +21,8 @@ public class HttpServer {
         new ItemController().createRoutes(server);
         server.before(((request, response) -> {
             if(!request.headers("Accept").contains("application/json")){
-                    server.halt(HttpStatus.NOT_ACCEPTABLE_406, "Dateiformat wird nicht unterstützt");
-                }
+                server.halt(HttpStatus.NOT_ACCEPTABLE_406, "Dateiformat wird nicht unterstützt");
+            }
         }));
 
         server.awaitInitialization();
