@@ -43,5 +43,6 @@ public class ItemTest extends FunctionalTest {
     public void checkExpectedType(){
         HttpResponse httpResponse = this.executeGet("/items", "application/json");
         assertThat(httpResponse.code(), is(200));
+
     }
 }
